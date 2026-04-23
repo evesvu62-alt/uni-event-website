@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Event Details - University Events Directory</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+	<header id="app-nav"></header>
+
+	<main class="page-main">
+		<! -- Event details section with main event information and related events -->
+		<section class="section-box">
+			<div class="container">
+				<div class="row mb-4">
+					<div class="col-12 col-lg-8">
+						<span id="eventCategory" class="badge mb-2">Career</span>
+						<h1 id="eventTitle" class="title mb-2">Internship Success Seminar</h1>
+						<p id="eventIntro" class="text-soft mb-0">A practical session with senior students and hiring guests focused on internship applications and interviews.</p>
+					</div>
+				</div>
+
+				<div class="row g-4 align-items-stretch">
+					<div class="col-12 col-xl-8">
+						<article class="card event-card h-100">
+							<div class="card-body">
+								<div class="rounded-4 overflow-hidden border mb-3">
+									<img id="eventMainImage" src="assets/img/index/internship.jpg" class="img-fluid w-100 event-detail-img" alt="Event image">
+								</div>
+
+								<div class="row g-3 mb-3">
+									<div class="col-12 col-md-6">
+										<p class="mb-1 text-soft">Date</p>
+										<p id="eventDate" class="mb-0 fw-semibold"><i class="bi bi-calendar-event me-2"></i>May 8, 2026</p>
+									</div>
+									<div class="col-12 col-md-6">
+										<p class="mb-1 text-soft">Time</p>
+										<p id="eventTime" class="mb-0 fw-semibold"><i class="bi bi-clock me-2"></i>3:00 PM to 5:00 PM</p>
+									</div>
+									<div class="col-12">
+										<p class="mb-1 text-soft">Location</p>
+										<p id="eventLocation" class="mb-0 fw-semibold"><i class="bi bi-geo-alt me-2"></i>Main Auditorium, University Campus</p>
+									</div>
+								</div>
+
+								<p class="mt-3 mb-0 text-soft">This static map image highlights the venue area to help students find the event easily before arrival.</p>
+							</div>
+						</article>
+					</div>
+					<!-- Action buttons for calendar, sharing, and booking -->
+					<div class="col-12 col-xl-4">
+						<div class="card event-card h-100">
+							<div class="card-body d-flex flex-column">
+								<h2 class="h5 mb-3">Actions</h2>
+								<a id="eventCalendarBtn" class="btn btn-outline-primary mb-2" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Internship+Success+Seminar&dates=20260508T150000/20260508T170000&details=Career+seminar+for+internship+success&location=Main+Auditorium" target="_blank" rel="noopener noreferrer">
+									<i class="bi bi-calendar-plus me-2"></i>Add to Calendar
+								</a>
+								<button type="button" id="shareEventBtn" class="btn btn-outline-secondary mb-2" aria-label="Share this event">
+									<i class="bi bi-share me-2"></i>Share
+								</button>
+								<button type="button" class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#bookSeatModal">
+									<i class="bi bi-ticket-perforated me-2"></i>Book Seat
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<! related events section -->
+				<div class="row mt-5 mb-3">
+					<div class="col-12">
+						<h2 class="title mb-1">Related Events</h2>
+						<p class="text-soft mb-0">More events you might be interested in</p>
+					</div>
+				</div>
+
+				<div class="row g-3" id="related-events">
+					<div class="col-12 col-md-6 col-lg-4 related-event-col" data-cat="academic" data-date="2026-05-02" data-location="Engineering Hall A2" data-description="Learn practical frameworks for research writing and citation with faculty mentors.">
+						<article class="card event-card h-100">
+							<img src="assets/img/index/workshop.jpg" class="card-img-top" alt="Research writing workshop">
+							<div class="card-body">
+								<span class="badge mb-2">Academic</span>
+								<h3 class="card-title h6 mb-1">Research Writing Workshop</h3>
+								<p class="card-text small mb-2">May 2, 2026 | Engineering Hall A2</p>
+								<a href="event.html" class="btn btn-sm btn-outline-primary">View</a>
+							</div>
+						</article>
+					</div>
+
+					<div class="col-12 col-md-6 col-lg-4 related-event-col" data-cat="culture" data-date="2026-05-12" data-location="Media Lab Hall" data-description="Weekly screening followed by moderated discussion with student film hosts.">
+						<article class="card event-card h-100">
+							<img src="assets/img/index/film.jpg" class="card-img-top" alt="Film club screening">
+							<div class="card-body">
+								<span class="badge mb-2">Culture</span>
+								<h3 class="card-title h6 mb-1">Film Club Screening</h3>
+								<p class="card-text small mb-2">May 12, 2026 | Media Lab Hall</p>
+								<a href="event.html" class="btn btn-sm btn-outline-primary">View</a>
+							</div>
+						</article>
+					</div>
+
+					<div class="col-12 col-md-6 col-lg-4 related-event-col" data-cat="sports" data-date="2026-05-14" data-location="Campus Sports Arena" data-description="Singles and doubles matches with coaching support and friendly campus competition.">
+						<article class="card event-card h-100">
+							<img src="assets/img/index/football.jpg" class="card-img-top" alt="Campus tennis tournament">
+							<div class="card-body">
+								<span class="badge mb-2">Sports</span>
+								<h3 class="card-title h6 mb-1">Campus Tennis Tournament</h3>
+								<p class="card-text small mb-2">May 14, 2026 | Campus Sports Arena</p>
+								<a href="event.html" class="btn btn-sm btn-outline-primary">View</a>
+							</div>
+						</article>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<div class="modal fade" id="bookSeatModal" tabindex="-1" aria-labelledby="bookSeatModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h2 class="modal-title fs-5" id="bookSeatModalLabel">Booking Confirmation</h2>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<span id="bookingMessage">Your seat has been reserved for the Internship Success Seminar. Please check your email for confirmation details</span>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="toast-container position-fixed bottom-0 end-0 p-3">
+		<div id="shareToast" class="toast align-items-center text-bg-dark border-0" role="status" aria-live="polite" aria-atomic="true">
+			<div class="d-flex">
+				<div class="toast-body" id="shareToastText">Event link copied.</div>
+				<button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+			</div>
+		</div>
+	</div>
+
+	<footer id="app-footer"></footer>
+
+	<button id="top-btn" class="top-btn" aria-label="Scroll to top">
+		<i class="bi bi-arrow-up"></i>
+	</button>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="assets/js/main.js"></script>
+</body>
+</html>
